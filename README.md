@@ -12,7 +12,8 @@ A simple sign-up page using .NET MAUI Layouts and Controls.
 
 ## Design Mockup
 
-> [!Tip] For a full list of the screens, check `/docs/design`.
+> [!Tip]
+> For a full list of the screens, check `/docs/design`.
 
 ![](./docs/design/showcase.png)
 
