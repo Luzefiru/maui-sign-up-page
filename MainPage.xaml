@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SignUpPage.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="100,0"
+            Spacing="25"
+            >
+            <VerticalStackLayout HorizontalOptions="FillAndExpand">
+                <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+                <Label Text="Let's set up your account" />
+            </VerticalStackLayout>
+            <VerticalStackLayout HorizontalOptions="CenterAndExpand">
+                <HorizontalStackLayout Spacing="6">
+                    <StackLayout>
+                        <Label Text="First Name" />
+                        <Entry x:Name="FirstName" Placeholder="Juan" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Last Name" />
+                        <Entry x:Name="LastName" Placeholder="dela Cruz" />
+                    </StackLayout>
+                </HorizontalStackLayout>
+                <Label
+                   Text="Username"
+                   SemanticProperties.Description="Welcome to dot net Multi platform App UI" />
+                <Entry x:Name="Username" Placeholder="juan.delacruz" Keyboard="Default" />
+                <Label Text="Password" />
+                <Entry IsPassword="True" x:Name="Password"/>
+                <Label Text="Confirm Password" />
+                <Entry IsPassword="True" />
+            </VerticalStackLayout>
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Create Account" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" />
+            <HorizontalStackLayout>
+                <Label Text="Already have an account?" />
+                <Label Text=".NET MAUI documentation"
+               TextColor="Blue"
+               TextDecorations="Underline"
+               HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding TapCommand}"
+                                      CommandParameter="https://docs.microsoft.com/dotnet/maui" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
