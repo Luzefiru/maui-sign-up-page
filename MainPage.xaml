@@ -4,58 +4,69 @@
              x:Class="SignUpPage.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="100,0"
-            Spacing="25"
-            >
-            <VerticalStackLayout HorizontalOptions="FillAndExpand">
+        <VerticalStackLayout Padding="16,0">
+            <ImageButton Source="arrow_left.png" HorizontalOptions="Start"/>
+            <VerticalStackLayout HorizontalOptions="FillAndExpand" Margin="0,0,0,64">
                 <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
+                Source="logo.png"
+                WidthRequest="256"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
-                <Label Text="Let's set up your account" />
+                SemanticProperties.Description="CoLab Logo"
+                    Margin="0,0,0,24"/>
+                <Label Text="Let's set up your CoLab account" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
             </VerticalStackLayout>
-            <VerticalStackLayout HorizontalOptions="CenterAndExpand">
-                <HorizontalStackLayout Spacing="6">
-                    <StackLayout>
-                        <Label Text="First Name" />
+            <VerticalStackLayout Spacing="16">
+                <FlexLayout JustifyContent="Start">
+                    <VerticalStackLayout Margin="0,0,8,0" FlexLayout.Grow="1">
+                        <Label Text="First Name" FontAttributes="Bold" />
                         <Entry x:Name="FirstName" Placeholder="Juan" />
-                    </StackLayout>
-                    <StackLayout>
-                        <Label Text="Last Name" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout FlexLayout.Grow="1">
+                        <Label Text="Last Name" FontAttributes="Bold"  />
                         <Entry x:Name="LastName" Placeholder="dela Cruz" />
-                    </StackLayout>
-                </HorizontalStackLayout>
-                <Label
-                   Text="Username"
-                   SemanticProperties.Description="Welcome to dot net Multi platform App UI" />
-                <Entry x:Name="Username" Placeholder="juan.delacruz" Keyboard="Default" />
-                <Label Text="Password" />
-                <Entry IsPassword="True" x:Name="Password"/>
-                <Label Text="Confirm Password" />
-                <Entry IsPassword="True" />
+                    </VerticalStackLayout>
+                </FlexLayout>
+                <VerticalStackLayout>
+                    <Label
+                       FontAttributes="Bold"
+                       Text="Username"
+                       SemanticProperties.Description="Your username" />
+                    <Entry x:Name="Username" Placeholder="juan.delacruz" Keyboard="Default" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <Label Text="Password" FontAttributes="Bold" />
+                    <Entry IsPassword="True" x:Name="Password" Placeholder="●●●●●●●●"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <Label Text="Confirm Password" FontAttributes="Bold" />
+                    <Entry IsPassword="True" Placeholder="●●●●●●●●" />
+                </VerticalStackLayout>
+
             </VerticalStackLayout>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Create Account" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
-            <HorizontalStackLayout>
-                <Label Text="Already have an account?" />
-                <Label Text=".NET MAUI documentation"
-               TextColor="Blue"
-               TextDecorations="Underline"
-               HorizontalOptions="Center">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding TapCommand}"
-                                      CommandParameter="https://docs.microsoft.com/dotnet/maui" />
-                    </Label.GestureRecognizers>
-                </Label>
-            </HorizontalStackLayout>
+            <VerticalStackLayout Spacing="16" Margin="0,118,0,0">
+                <Button
+                    x:Name="CounterBtn"
+                    Text="Create Account" 
+                    Clicked="OnCounterClicked"
+                    HorizontalOptions="Fill" />
+                <HorizontalStackLayout>
+                    <Label Text="Already have an account?" Padding="0,0,4,0"/>
+                    <Label Text="Sign In"
+                   TextColor="Blue"
+                   HorizontalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding TapCommand}"
+                          CommandParameter="https://docs.microsoft.com/dotnet/maui" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
         </VerticalStackLayout>
     </ScrollView>
 
 </ContentPage>
+
