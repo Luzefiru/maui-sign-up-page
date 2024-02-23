@@ -5,12 +5,14 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="16,0">
+            <ImageButton Source="arrow_left.png" HorizontalOptions="Start"/>
             <VerticalStackLayout HorizontalOptions="FillAndExpand" Margin="0,0,0,64">
                 <Image
-                Source="dotnet_bot.png"
-                HeightRequest="144"
+                Source="logo.png"
+                WidthRequest="256"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+                SemanticProperties.Description="CoLab Logo"
+                    Margin="0,0,0,24"/>
                 <Label Text="Let's set up your CoLab account" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
             </VerticalStackLayout>
             <VerticalStackLayout Spacing="16">
@@ -43,7 +45,7 @@
                 </VerticalStackLayout>
 
             </VerticalStackLayout>
-            
+
             <VerticalStackLayout Spacing="16" Margin="0,118,0,0">
                 <Button
                     x:Name="CounterBtn"
@@ -52,9 +54,8 @@
                     HorizontalOptions="Fill" />
                 <HorizontalStackLayout>
                     <Label Text="Already have an account?" Padding="0,0,4,0"/>
-                    <Label Text="Log In"
+                    <Label Text="Sign In"
                    TextColor="Blue"
-                   TextDecorations="Underline"
                    HorizontalOptions="Center">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding TapCommand}"
