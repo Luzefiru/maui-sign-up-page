@@ -54,9 +54,7 @@ namespace SignUpPage
             {
                 message = "All fields are required.";
                 title = "Error";
-            }
-
-            if (PasswordI != ConfirmPasswordI)
+            } else if (PasswordI != ConfirmPasswordI)
             {
                 message = "Passwords don't match.";
                 title = "Error";
