@@ -4,8 +4,11 @@ namespace SignUpPage
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-        string myText = "";
+        string FirstNameI = "";
+        string LastNameI = "";
+        string UsernameI = "";
+        string PasswordI = "";
+        string ConfirmPasswordI = "";
         public ICommand TapCommand = new Command<string>(async (url) => await Launcher.OpenAsync(url));
 
         public MainPage()
@@ -13,30 +16,58 @@ namespace SignUpPage
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void OnFirstNameChange(object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            FirstNameI = FirstName.Text;
         }
 
-        private async void OnEntryTextChanged(object sender, EventArgs e)
+        private void OnLastNameChange(object sender, EventArgs e)
         {
-            myText = FirstName.Text;
-            if (myText.Contains('e'))
+            LastNameI = LastName.Text;
+        }
+
+        private void OnUsernameChange(object sender, EventArgs e)
+        {
+            UsernameI = Username.Text;
+        }
+
+        private void OnPasswordChange(object sender, EventArgs e)
+        {
+            PasswordI = Password.Text;
+        }
+
+        private void OnConfirmPasswordChange(object sender, EventArgs e)
+        {
+            ConfirmPasswordI = ConfirmPassword.Text;
+        }
+
+        private void OnCreateAccount(object sender, EventArgs e)
+        {
+            string message = "Account registered!";
+            string title = "Success";
+
+            if (FirstNameI.Length == 0 ||
+                LastNameI.Length == 0 ||
+                UsernameI.Length == 0 ||
+                PasswordI.Length == 0 ||
+                ConfirmPasswordI.Length == 0)
             {
-                await DisplayAlert("Alert", "This contains an 'e'", "OK");
+                message = "All fields are required.";
+                title = "Error";
             }
+
+            if (PasswordI != ConfirmPasswordI)
+            {
+                message = "Passwords don't match.";
+                title = "Error";
+            }
+
+            DisplayAlertMessage(title, message);
         }
 
-        private void OnEntryCompleted(object sender, EventArgs e)
+        private async void DisplayAlertMessage(string title, string message)
         {
-            myText = ((Entry)sender).Text;
+            await DisplayAlert(title, message, "OK");
         }
     }
 
