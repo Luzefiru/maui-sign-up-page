@@ -57,10 +57,6 @@
                     <Label Text="Sign In"
                    TextColor="Blue"
                    HorizontalOptions="Center">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding TapCommand}"
-                          CommandParameter="https://docs.microsoft.com/dotnet/maui" />
-                        </Label.GestureRecognizers>
                     </Label>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
