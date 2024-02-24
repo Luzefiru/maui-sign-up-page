@@ -9,7 +9,6 @@ namespace SignUpPage
         string UsernameI = "";
         string PasswordI = "";
         string ConfirmPasswordI = "";
-        public ICommand TapCommand = new Command<string>(async (url) => await Launcher.OpenAsync(url));
 
         public MainPage()
         {
