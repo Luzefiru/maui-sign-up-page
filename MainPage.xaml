@@ -18,7 +18,7 @@
             <VerticalStackLayout Spacing="16">
                 <FlexLayout JustifyContent="Start">
                     <VerticalStackLayout Margin="0,0,8,0" FlexLayout.Grow="1">
-                        <Label Text="First Name" FontAttributes="Bold" />
+                        <Label Text="First Name" FontAttributes="Bold"  />
                         <Border>
                             <Entry x:Name="FirstName" Placeholder="Juan" TextChanged="OnFirstNameChange"/>
                         </Border>
