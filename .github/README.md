@@ -32,4 +32,6 @@ A simple sign-up page using .NET MAUI Layouts and Controls.
 
 ## Contributors
 
-![GitHub Contributors](https://contrib.rocks/image?repo=Luzefiru/maui-sign-up-page)
+<a href="https://github.com/Luzefiru/maui-sign-up-page/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Luzefiru/maui-sign-up-page" />
+</a>
