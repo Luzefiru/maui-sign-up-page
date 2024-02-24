@@ -12,18 +12,22 @@
                 WidthRequest="256"
                 Aspect="AspectFit"
                 SemanticProperties.Description="CoLab Logo"
-                    Margin="0,0,0,24"/>
-                <Label Text="Let's set up your CoLab account" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                    Margin="0,0,0,18"/>
+                <Label Text="Let's set up your CoLab account." HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Gray"/>
             </VerticalStackLayout>
             <VerticalStackLayout Spacing="16">
                 <FlexLayout JustifyContent="Start">
                     <VerticalStackLayout Margin="0,0,8,0" FlexLayout.Grow="1">
                         <Label Text="First Name" FontAttributes="Bold" />
-                        <Entry x:Name="FirstName" Placeholder="Juan" TextChanged="OnFirstNameChange"/>
+                        <Border>
+                            <Entry x:Name="FirstName" Placeholder="Juan" TextChanged="OnFirstNameChange"/>
+                        </Border>
                     </VerticalStackLayout>
                     <VerticalStackLayout FlexLayout.Grow="1">
                         <Label Text="Last Name" FontAttributes="Bold"  />
+                        <Border>
                         <Entry x:Name="LastName" Placeholder="dela Cruz" TextChanged="OnLastNameChange" />
+                        </Border>
                     </VerticalStackLayout>
                 </FlexLayout>
                 <VerticalStackLayout>
@@ -31,31 +35,37 @@
                        FontAttributes="Bold"
                        Text="Username"
                        SemanticProperties.Description="Your username" />
+                    <Border>
                     <Entry x:Name="Username" Placeholder="juan.delacruz" Keyboard="Default" TextChanged="OnUsernameChange" />
+                    </Border>
                 </VerticalStackLayout>
 
                 <VerticalStackLayout>
                     <Label Text="Password" FontAttributes="Bold" />
-                    <Entry IsPassword="True" x:Name="Password" Placeholder="●●●●●●●●" TextChanged="OnPasswordChange"/>
+                    <Border>
+                        <Entry IsPassword="True" x:Name="Password" Placeholder="●●●●●●●●" TextChanged="OnPasswordChange"/>
+                    </Border>
                 </VerticalStackLayout>
 
                 <VerticalStackLayout>
                     <Label Text="Confirm Password" FontAttributes="Bold" />
-                    <Entry IsPassword="True" x:Name="ConfirmPassword" Placeholder="●●●●●●●●" TextChanged="OnConfirmPasswordChange" />
+                    <Border>
+                        <Entry IsPassword="True" x:Name="ConfirmPassword" Placeholder="●●●●●●●●" TextChanged="OnConfirmPasswordChange" />
+                    </Border>
                 </VerticalStackLayout>
 
             </VerticalStackLayout>
 
-            <VerticalStackLayout Spacing="16" Margin="0,118,0,0">
+            <VerticalStackLayout Spacing="16" Margin="0,110,0,0">
                 <Button
                     x:Name="CreateAccountBtn"
                     Text="Create Account" 
                     Clicked="OnCreateAccount"
                     HorizontalOptions="Fill" />
                 <HorizontalStackLayout>
-                    <Label Text="Already have an account?" Padding="0,0,4,0"/>
+                    <Label Text="Already have an account?" TextColor="Gray" FontAttributes="Bold" Padding="0,0,4,0"/>
                     <Label Text="Sign In"
-                   TextColor="Blue"
+                   TextColor="DodgerBlue"
                    HorizontalOptions="Center">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding TapCommand}"
@@ -67,6 +77,6 @@
 
         </VerticalStackLayout>
     </ScrollView>
-
+    
 </ContentPage>
 
